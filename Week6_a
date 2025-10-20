@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+class Number {
+    int x;
+public:
+    Number(int val) : x(val) {}
+    Number operator+(Number n) {
+        return Number(x + n.x);
+    }
+    Number operator-(Number n) {
+        return Number(x - n.x);
+    }
+    Number operator-() {
+        return Number(-x);
+    }
+    Number operator++() {
+        ++x;
+        return *this;
+}
+    Number operator--() {
+        --x;
+        return *this;
+    }
+    void display() {
+        cout << "Value: " << x << endl;
+    }
+};
+int main() {
+    Number a(10), b(5);
+    Number sum = a + b;     
+    Number diff = a - b;    
+    Number neg = -a;        
+    Number inc = ++a;       
+    Number preDec = --a;    
+    cout << "Sum: "; sum.display();         
+    cout << "Difference: "; diff.display(); 
+    cout << "Negation: "; neg.display();    
+    cout << "Incremented: "; inc.display(); 
+    cout << "Prefix Decrement: "; preDec.display(); 
+    cout << "Current Value: "; a.display(); 
+    return 0;
+}
