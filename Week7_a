@@ -1,0 +1,152 @@
+#include <iostream>
+using namespace std;
+class Animal {
+public:
+    void eat() {
+        cout << "Animal eats food." << endl;
+    }
+};
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Dog barks." << endl;
+    }
+};
+int main() {
+    Dog d;
+    d.eat();   
+    d.bark();  
+    return 0;
+}
+Output:
+
+        
+
+2.	Multiple Inheritance
+#include <iostream>
+using namespace std;
+class Painter {
+public:
+    void paint() {
+        cout << "Painting a picture." << endl;
+    }
+};
+class Singer {
+public:
+    void sing() {
+        cout << "Singing a song." << endl;
+    }
+};
+class Artist : public Painter, public Singer {
+public:
+    void perform() {
+        cout << "Artist performs on stage." << endl;
+    }
+};
+int main() {
+    Artist a;
+    a.paint();
+    a.sing();
+    a.perform();
+    return 0;
+}
+Output:
+
+          
+
+3.	Multi-level Inheritance
+#include <iostream>
+using namespace std;
+class Grandparent {
+public:
+    void wisdom() {
+        cout << "Sharing wisdom." << endl;
+    }
+};
+class Parent : public Grandparent {
+public:
+    void advice() {
+        cout << "Giving advice." << endl;
+    }
+};
+class Child : public Parent {
+public:
+    void play() {
+        cout << "Child is playing." << endl;
+    }
+};
+int main() {
+    Child c;
+    c.wisdom();
+    c.advice();
+    c.play();
+    return 0;
+}
+Output :
+
+                       
+
+4.	Hierarchical Inheritance
+
+#include <iostream>
+using namespace std;
+
+class Vehicle {
+public:
+    void start() {
+        cout << "Vehicle starts." << endl;
+    }
+};
+
+class Car : public Vehicle {
+public:
+    void drive() {
+        cout << "Car is driving." << endl;
+    }
+};
+
+class Bike : public Vehicle {
+public:
+    void ride() {
+        cout << "Bike is riding." << endl;
+    }
+};
+
+int main() {
+    Car c;
+    Bike b;
+    c.start();
+    c.drive();
+    b.start();
+    b.ride();
+    return 0;
+}
+  #include <iostream>
+  using namespace std;
+class A {
+public:
+    void show() {
+        cout << "Class A method." << endl;
+    }
+};
+
+class B : virtual public A {
+};
+
+class C : virtual public A {
+};
+
+class D : public B, public C {
+};
+
+int main() {
+    D obj;
+    obj.show();  
+    return 0;
+}
+
+
+     
+
+
+
